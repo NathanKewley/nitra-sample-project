@@ -1,0 +1,7 @@
+---
+bicep_path: network/privateDnsZoneLink.bicep
+
+params:
+  linkName: link-shared-services-prod
+  privateDnsZoneName: Ref:shared-services-prod/rg-networking/private-dns-blob:privateDnsZoneName
+  virtualNetworkId: Ref:shared-services-prod/rg-networking/virtual-network:virtualNetworkId

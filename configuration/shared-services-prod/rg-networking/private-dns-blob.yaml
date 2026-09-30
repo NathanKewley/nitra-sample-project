@@ -1,0 +1,10 @@
+---
+bicep_path: network/privateDnsZone.bicep
+redeploy_as_dependency: false
+
+params:
+  zoneName: privatelink.blob.core.windows.net
+  tags:
+    environment: prod
+    owner: platform-team
+    managedBy: nitra

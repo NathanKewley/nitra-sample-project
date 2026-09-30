@@ -1,0 +1,11 @@
+---
+bicep_path: subscription/budget.bicep
+scope: subscription
+
+params:
+  name: budget-services-prod
+  amount: 5
+  thresholdPercent: 80
+  actionGroupId: Ref:shared-services-prod/rg-monitoring/action-group:actionGroupId
+  contactEmails:
+    - noemail@noemail.com

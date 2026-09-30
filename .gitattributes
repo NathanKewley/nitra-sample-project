@@ -1,0 +1,2 @@
+# Hook scripts must keep LF line endings to run in bash
+*.sh text eol=lf

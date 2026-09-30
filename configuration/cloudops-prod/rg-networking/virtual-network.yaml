@@ -1,9 +1,14 @@
 ---
-bicep_path: virtual-network/mainSpoke.bicep
+bicep_path: network/spoke.bicep
 
 params:
   name: CloudOps-Prod
   location: australiaeast
-  addressPrefixs: "['10.100.0.0/16']"
-  subnetName: CloudOps-Prod
-  subnetAddressPrefix: 10.100.0.0/16
+  addressPrefixes:
+    - 10.100.0.0/16
+  workloadSubnetName: CloudOps-Prod-Workload
+  workloadSubnetAddressPrefix: 10.100.0.0/24
+  tags:
+    environment: prod
+    owner: platform-team
+    managedBy: nitra
