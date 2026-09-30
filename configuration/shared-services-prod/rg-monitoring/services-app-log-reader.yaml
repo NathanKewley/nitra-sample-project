@@ -1,0 +1,8 @@
+---
+# Deployed in the hub, but needs the identity created in the services-prod subscription,
+# so Nitra deploys services-prod/rg-application-01/app first
+bicep_path: monitoring/logReaderRoleAssignment.bicep
+
+params:
+  workspaceName: Ref:shared-services-prod/rg-monitoring/log-analytics:workspaceName
+  principalId: Ref:services-prod/rg-application-01/app:identityPrincipalId

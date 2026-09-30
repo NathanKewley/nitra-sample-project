@@ -1,11 +1,11 @@
 ---
-bicep_path: virtual-network/resources/peeringConnectionSpoke.bicep
+bicep_path: network/peering.bicep
 
 params:
-  peeringName: shared-services-prod-peer-to-services-prod
-  hubNetworkId: Ref:shared-services-prod.rg-networking.virtual-network:virtualNetworkId
-  spokeNetworkName: Ref:services-prod.rg-networking.virtual-network:networkName
-  allowVirtualNetworkAccess: "true"
-  allowForwardedTraffic: "true"
-  allowGatewayTransit: "false"
-  useRemoteGateways: "false"
+  peeringName: services-prod-to-shared-services-prod
+  localNetworkName: Ref:services-prod/rg-networking/virtual-network:networkName
+  remoteNetworkId: Ref:shared-services-prod/rg-networking/virtual-network:virtualNetworkId
+  allowVirtualNetworkAccess: true
+  allowForwardedTraffic: true
+  allowGatewayTransit: false
+  useRemoteGateways: false

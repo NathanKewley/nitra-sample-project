@@ -1,9 +1,0 @@
----
-bicep_path: policy/assignBasicPolicySubscription.bicep
-scope: subscription
-
-params:
-  policyDisplayName: Use_TLS_1.2_only_mode_for_your_managed_domains
-  policyAssignmentName: Use_TLS_1.2_only_mode_for_your_managed_domains
-  policyDefinitionID: /providers/Microsoft.Authorization/policyDefinitions/3aa87b5a-7813-4b57-8a43-42dd9df5aaa7
-  enforcementMode: Default

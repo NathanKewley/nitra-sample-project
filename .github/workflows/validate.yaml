@@ -1,0 +1,38 @@
+name: nitra validate
+
+# nitra validate needs no Azure login, so it can check every pull request
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.12"
+
+    # clone the nitra github repo
+    - name: Checkout nitra
+      uses: actions/checkout@v4
+      with:
+        repository: NathanKewley/Nirta
+        path: .nitra
+
+    # install nitra into the action container
+    - name: Install nitra
+      run: pip3 install ./.nitra
+
+    # templates are compiled locally with the Azure CLI's bicep
+    - name: Install bicep
+      run: az bicep install
+
+    - name: Validate
+      run: nitra validate

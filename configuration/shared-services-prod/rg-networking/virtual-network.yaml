@@ -1,12 +1,20 @@
 ---
-bicep_path: virtual-network/mainHub.bicep
+bicep_path: network/hub.bicep
 
 params:
   name: Shared-Services-Prod
   location: australiaeast
-  addressPrefixs: "['10.0.0.0/20']"
-  firewallSubnetName: AzureFirewallSubnet
-  firewallSubnetAddressPrefix: '10.0.3.0/26'
-  SubnetName: Shared-Services-VPN
-  SubnetAddressPrefix: 10.0.2.0/27
+  addressPrefixes:
+    - 10.0.0.0/20
+  firewallSubnetAddressPrefix: 10.0.3.0/26
+  sharedSubnetName: Shared-Services-VPN
+  sharedSubnetAddressPrefix: 10.0.2.0/27
+  # Azure Firewall costs about $1.25 an hour, keep it off unless you need it
   deployFirewall: false
+  tags:
+    environment: prod
+    owner: platform-team
+    managedBy: nitra
+
+post_hooks:
+  Python3Script: sample_python_hook.py

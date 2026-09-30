@@ -1,0 +1,12 @@
+---
+bicep_path: monitoring/actionGroup.bicep
+redeploy_as_dependency: false
+
+params:
+  name: ag-platform-team
+  shortName: platform
+  emailAddress: noemail@noemail.com
+  tags:
+    environment: prod
+    owner: platform-team
+    managedBy: nitra

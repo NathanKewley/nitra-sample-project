@@ -1,0 +1,13 @@
+---
+bicep_path: monitoring/logAnalytics.bicep
+# Many configurations reference this workspace, don't redeploy it for each of them once it exists
+redeploy_as_dependency: false
+
+params:
+  name: log-nitra-central
+  location: australiaeast
+  retentionInDays: 30
+  tags:
+    environment: prod
+    owner: platform-team
+    managedBy: nitra

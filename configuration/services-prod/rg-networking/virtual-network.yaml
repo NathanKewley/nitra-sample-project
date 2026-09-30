@@ -1,9 +1,14 @@
 ---
-bicep_path: virtual-network/mainSpoke.bicep
+bicep_path: network/spoke.bicep
 
 params:
   name: Services-Prod
   location: australiaeast
-  addressPrefixs: "['10.200.0.0/16']"
-  subnetName: Services-Prod
-  subnetAddressPrefix: 10.200.0.0/16
+  addressPrefixes:
+    - 10.200.0.0/16
+  workloadSubnetName: Services-Prod-Workload
+  workloadSubnetAddressPrefix: 10.200.0.0/24
+  tags:
+    environment: prod
+    owner: platform-team
+    managedBy: nitra

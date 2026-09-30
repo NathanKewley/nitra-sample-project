@@ -1,9 +1,0 @@
----
-bicep_path: policy/assignBasicPolicySubscription.bicep
-scope: subscription
-
-params:
-  policyDisplayName: Automation_account_variables_should_be_encrypted
-  policyAssignmentName: Automation_account_variables_should_be_encrypted
-  policyDefinitionID: /providers/Microsoft.Authorization/policyDefinitions/3657f5a0-770e-44a3-b44e-9431ba1e9735
-  enforcementMode: Default

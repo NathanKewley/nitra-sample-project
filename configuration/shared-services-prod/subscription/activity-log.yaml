@@ -1,0 +1,6 @@
+---
+bicep_path: subscription/activityLog.bicep
+scope: subscription
+
+params:
+  workspaceId: Ref:shared-services-prod/rg-monitoring/log-analytics:workspaceId

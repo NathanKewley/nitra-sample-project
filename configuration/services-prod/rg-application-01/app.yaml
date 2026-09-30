@@ -1,0 +1,17 @@
+---
+bicep_path: workload/app.bicep
+
+params:
+  location: australiaeast
+  appName: nitra-app-01
+  storageNamePrefix: stnitraapp
+  workloadSubnetId: Ref:services-prod/rg-networking/virtual-network:workloadSubnetId
+  blobPrivateDnsZoneId: Ref:shared-services-prod/rg-networking/private-dns-blob:privateDnsZoneId
+  workspaceId: Ref:shared-services-prod/rg-monitoring/log-analytics:workspaceId
+  tags:
+    environment: prod
+    owner: platform-team
+    managedBy: nitra
+
+post_hooks:
+  BashScript: sample_bash_hook.sh

@@ -1,0 +1,9 @@
+---
+bicep_path: subscription/policyAssignment.bicep
+scope: subscription
+
+params:
+  policyDisplayName: Audit_VMs_that_do_not_use_managed_disks
+  policyAssignmentName: Audit_VMs_that_do_not_use_managed_disks
+  policyDefinitionID: /providers/Microsoft.Authorization/policyDefinitions/06a78e20-9358-41c9-923c-fb736d382a4d
+  enforcementMode: Default
